@@ -23,4 +23,5 @@ momentjs:moment
 ddp-rate-limiter
 xolvio:cleaner
 dburles:factory
-practicalmeteor:mocha
+practicalmeteor:sinon
+cultofcoders:mocha

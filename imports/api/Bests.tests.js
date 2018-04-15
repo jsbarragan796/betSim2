@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
-import { assert } from "meteor/practicalmeteor:mocha";
+import { Random } from 'meteor/random';
+
+import { assert } from 'chai';
 import { resetDatabase } from "meteor/xolvio:cleaner";
 import { sinon } from "meteor/practicalmeteor:sinon";
 import { Factory } from "meteor/dburles:factory";
@@ -53,7 +55,7 @@ if (Meteor.isServer) {
                     ProbT: cProbT,
                     Team1: cTeam1,
                     Team2: cTeam2,
-                    Tie: cTeamT,
+                    Tie: cTie,
                     E1: cE1,
                     E2: cE2,
                     ET: cET,
@@ -61,7 +63,7 @@ if (Meteor.isServer) {
                 });
 
                 let newBet = Bets.findOne({_id: currentUser._id});
-                assert.notNull(newBet);
+                assert.isNotNull(newBet, "Bet added!");
             });
         });
     });
