@@ -1,0 +1,15 @@
+.myBets{
+    display: none;
+    background-color: white;
+    max-width: 95%;
+    height: 100%;
+}
+
+:target{
+    display: block;
+}
+
+.Live{
+    color: springgreen;
+    font-weight: bold;
+}

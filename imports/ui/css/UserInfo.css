@@ -1,0 +1,36 @@
+.myInfo{
+    display: none;
+    background-color: white;
+    max-width: 95%;
+    height: 100%;
+    padding-top: 20px;
+}
+
+.titleMargin{
+    margin-top: 10px;
+}
+
+:target{
+    display: block;
+}
+
+.lose{
+    color: red;
+}
+
+.winner{
+    color: greenyellow;
+}
+
+.bodyText{
+    font-family: 'Hind', sans-serif;
+    margin-bottom: 0;
+}
+
+.infoText{
+    color: #666
+}
+
+.myRow{
+    margin-top: 10px;
+}

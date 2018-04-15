@@ -1,0 +1,33 @@
+.myCard  p, h4{
+    margin-bottom: 0 !important;
+}
+
+.myCardButton{
+    width: 100%;
+}
+
+.myButtonGroup{
+    width: 100%;
+}
+
+.myBetGroup{
+    padding-bottom: 10px;
+}
+
+.subTitle{
+    color: dimgray;
+}
+
+.myBetTitle{    
+    padding-bottom: 0;
+    padding-top: 0;
+    width: 100%;
+}
+
+.myBetAmount{
+    width: 100%;
+}
+
+.noPadding{
+    padding: 0;
+}
