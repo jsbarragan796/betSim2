@@ -12,8 +12,10 @@ class ImageGallery extends Component {
                 <ol className="carousel-indicators">
                     <li name="Basketball_1.png"  data-target={"#" + this.props.categoryInfo.name + "EventImageCarousel"} data-slide-to="0" className="active"></li>
                     <li name="Football_1.png" data-target={"#" + this.props.categoryInfo.name + "EventImageCarousel"} data-slide-to="1"></li>
-                    <li name="Basic_Event.png" data-target={"#" + this.props.categoryInfo.name + "EventImageCarousel"} data-slide-to="2"></li>
-                    <li name="Basic_Event_FondoNegro.png" data-target={"#" + this.props.categoryInfo.name + "EventImageCarousel"} data-slide-to="3"></li>
+                    <li name="Volleyball_1.png" data-target={"#" + this.props.categoryInfo.name + "EventImageCarousel"} data-slide-to="2"></li>
+                    <li name="Boxing_1.png" data-target={"#" + this.props.categoryInfo.name + "EventImageCarousel"} data-slide-to="3"></li>
+                    <li name="Basic_Event.png" data-target={"#" + this.props.categoryInfo.name + "EventImageCarousel"} data-slide-to="4"></li>
+                    <li name="Basic_Event_FondoNegro.png" data-target={"#" + this.props.categoryInfo.name + "EventImageCarousel"} data-slide-to="5"></li>
                 </ol>
                 <div className="carousel-inner">
                     <div className="carousel-item active smGallery">
@@ -25,11 +27,19 @@ class ImageGallery extends Component {
                     </div>
 
                     <div className="carousel-item smGallery">
-                        <img id="Slide2" className="d-block w-100" name="Basic_Event.png" src="img/Basic_Event.png" alt="Basic event image, white bakground" />
+                        <img id="Slide2" className="d-block w-100" name="Volleyball_1.png" src="img/Volleyball_1.png" alt="Volleyball event image" />
                     </div>
 
                     <div className="carousel-item smGallery">
-                        <img id="Slide3" className="d-block w-100" name="Basic_Event_FondoNegro.png" src="img/Basic_Event_FondoNegro.png" alt="Basic event image, black bakground" />
+                        <img id="Slide3" className="d-block w-100" name="Boxing_1.png" src="img/Boxing_1.png" alt="Boxing event image" />
+                    </div>
+
+                    <div className="carousel-item smGallery">
+                        <img id="Slide4" className="d-block w-100" name="Basic_Event.png" src="img/Basic_Event.png" alt="Basic event image, white bakground" />
+                    </div>
+
+                    <div className="carousel-item smGallery">
+                        <img id="Slide5" className="d-block w-100" name="Basic_Event_FondoNegro.png" src="img/Basic_Event_FondoNegro.png" alt="Basic event image, black bakground" />
                     </div>
                 </div>
                 <a className="carousel-control-prev" href={"#" + this.props.categoryInfo.name + "EventImageCarousel"} role="button" data-slide="prev">
