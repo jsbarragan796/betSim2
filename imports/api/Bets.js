@@ -38,8 +38,8 @@ if (Meteor.isServer) {
         name: 'Bets.closeBet'
     };
 
-    DDPRateLimiter.addRule(addBetRule, 5, 1000);
-    DDPRateLimiter.addRule(closeBetRule, 5, 1000);
+    DDPRateLimiter.addRule(addBetRule, 5, 2000);
+    DDPRateLimiter.addRule(closeBetRule, 5, 2000);
 }
 
 Meteor.methods({

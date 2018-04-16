@@ -49,12 +49,12 @@ if (Meteor.isServer) {
         name: 'User.addWinTeam'
     };
 
-    DDPRateLimiter.addRule(addCoinsRule, 5, 1000);
-    DDPRateLimiter.addRule(addCoinsToUserRule, 5, 1000);
-    DDPRateLimiter.addRule(removeBetCoinsRule, 5, 1000);
-    DDPRateLimiter.addRule(removeNewBetCoinsRule, 5, 1000);
-    DDPRateLimiter.addRule(addTeamBetRule, 5, 1000);
-    DDPRateLimiter.addRule(addWinTeamRule, 5, 1000);
+    DDPRateLimiter.addRule(addCoinsRule, 5, 2000);
+    DDPRateLimiter.addRule(addCoinsToUserRule, 5, 2000);
+    DDPRateLimiter.addRule(removeBetCoinsRule, 5, 2000);
+    DDPRateLimiter.addRule(removeNewBetCoinsRule, 5, 2000);
+    DDPRateLimiter.addRule(addTeamBetRule, 5, 2000);
+    DDPRateLimiter.addRule(addWinTeamRule, 5, 2000);
 }
 
 Meteor.methods({

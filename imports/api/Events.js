@@ -50,12 +50,12 @@ if (Meteor.isServer) {
         name: 'Events.addBet'
     };
 
-    DDPRateLimiter.addRule(addEventRule, 5, 1000);
-    DDPRateLimiter.addRule(startEventRule, 5, 1000);
-    DDPRateLimiter.addRule(endEventRule, 5, 1000);
-    DDPRateLimiter.addRule(updateScoreRule, 5, 1000);
-    DDPRateLimiter.addRule(addMatchEventRule, 5, 1000);
-    DDPRateLimiter.addRule(addBetRule, 5, 1000);
+    DDPRateLimiter.addRule(addEventRule, 5, 2000);
+    DDPRateLimiter.addRule(startEventRule, 5, 2000);
+    DDPRateLimiter.addRule(endEventRule, 5, 2000);
+    DDPRateLimiter.addRule(updateScoreRule, 5, 2000);
+    DDPRateLimiter.addRule(addMatchEventRule, 5, 2000);
+    DDPRateLimiter.addRule(addBetRule, 5, 2000);
 }
 
 Meteor.methods({
