@@ -8,15 +8,18 @@ BetSim was created using Meteor+React
 See a demo here: https://betsim2.herokuapp.com/login
 
 Features on added on V2:
-- Event Tracking optimized:
+- Bets history- Event Tracking optimized:
   - My bets
   - Optimized bet graphics
-- Bets history
-- Purchase history
-- User information
 - 'MyTeams' data
+- Purchase history
+- Tests implemented
+- User information
 
 To run the project:
 - git clone https://github.com/CamiloC-Wk/betSim2.git
 - meteor npm install
 - meteor
+
+To run the test:
+- meteor test --driver-package cultofcoders:mocha --port XXXX
