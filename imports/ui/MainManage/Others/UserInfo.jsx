@@ -121,7 +121,10 @@ class UserInfo extends Component {
 
         let result = <th scope="col" className="lose">Unfinished</th>;
 
-        if (bInfo && myEvents) {
+        if (bInfo && myEvents && myEvents.length > 0) {
+            console.log(bInfo);
+            console.log(myEvents);
+
             bInfo.map((e) => (
                 count++ ,
                 myEvents.map((ev) => {
