@@ -9,10 +9,12 @@ See a demo here: https://betsim2.herokuapp.com/login
 
 Features on added on V2:
 - Bets history- Event Tracking optimized:
+- Hotjar
   - My bets
   - Optimized bet graphics
 - 'MyTeams' data
 - Purchase history
+- Rate limit for Meteor.methods()
 - Tests implemented
 - User information
 
