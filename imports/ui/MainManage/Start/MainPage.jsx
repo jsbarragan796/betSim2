@@ -35,6 +35,10 @@ class MainPage extends Component {
         this.loadCategoryPages = this.loadCategoryPages.bind(this);
     }
 
+    componentDidMount(){
+        $('#Football').focus();
+    }
+
     startEvent(eId) {
         //console.log("Starting event | id: " + eId)
 

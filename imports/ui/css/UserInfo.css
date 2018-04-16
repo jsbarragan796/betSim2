@@ -22,6 +22,10 @@
     color: greenyellow;
 }
 
+.unfinished{
+    color: blue;
+}
+
 .bodyText{
     font-family: 'Hind', sans-serif;
     margin-bottom: 0;

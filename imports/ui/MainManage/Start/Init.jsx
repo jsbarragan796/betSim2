@@ -9,16 +9,16 @@ import Signup from '../../Accounts/Signup.jsx'
 
 class Init extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
-        
-        this.state={
+
+        this.state = {
             modalStatus: "LOGIN"
         }
 
         this.Login = this.Login.bind(this);
-            this.Signup = this.Signup.bind(this);
-            this.LogedIn = this.LogedIn.bind(this);
+        this.Signup = this.Signup.bind(this);
+        this.LogedIn = this.LogedIn.bind(this);
     }
 
     Login() {
@@ -35,7 +35,7 @@ class Init extends Component {
         });
     }
 
-    LogedIn(){
+    LogedIn() {
         $('#LogModal').modal('hide');
         $('body').removeClass('modal-open');
         $('.modal-backdrop').remove();
@@ -48,7 +48,7 @@ class Init extends Component {
                 <InitNavBar Login={this.Login} />
 
                 <div id="LogModal" className="modal" tabIndex="-1" role="dialog">
-                    {this.state.modalStatus == "LOGIN" ? <Login Signup={this.Signup} LogedIn={this.LogedIn} /> : <Signup Login={this.Login}  history={this.props.history} />}
+                    {this.state.modalStatus == "LOGIN" ? <Login Signup={this.Signup} LogedIn={this.LogedIn} /> : <Signup Login={this.Login} history={this.props.history} />}
                 </div>
 
                 <div id="myCarousel" className="carousel slide" data-ride="carousel">
@@ -57,34 +57,33 @@ class Init extends Component {
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
                     </ol>
-                    <div className="carousel-inner initCarousel-item ">
-                        <div className="carousel-item active">
-                            <img className="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide" />
+                    <div className="carousel-inner">
+                        <div className="carousel-item initCarousel-item verticalAlign">
+                            <img className="first-slide verticalAlign" src="img/Slide1.jpg" alt="First slide image" />
                             <div className="container">
                                 <div className="carousel-caption text-left">
-                                    <h1>Example headline.</h1>
-                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                    <p><a className="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                                    <h1>Live games tracking!</h1>
+                                    <p>Do not miss any event of your favorite match!</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item initCarousel-item ">
-                            <img className="second-slide" src="img/MoneyHand.jpg" alt="Second slide" />
+                        <div className="carousel-item initCarousel-item active">
+                            <img className="second-slide" src="img/Slide2.jpg" alt="Second slide image" />
                             <div className="container">
                                 <div className="carousel-caption">
-                                    <h1>Another example headline.</h1>
-                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                    <p><a className="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                                    <h1>Suscribe, bet and win!</h1>
+                                    <p>It's easy, don't miss the oportunity!</p>
+
+                                    <button type="button" className="btn btn-lg btn-primary" onClick={() => this.Signup()} data-toggle="modal" data-target="#LogModal">Sign up today!</button>
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel-item initCarousel-item ">
-                            <img className="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide" />
+                        <div className="carousel-item initCarousel-item">
+                            <img className="third-slide" src="img/Slide3.jpg" alt="Third slide image" />
                             <div className="container">
                                 <div className="carousel-caption text-right">
-                                    <h1>One more for good measure.</h1>
-                                    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                    <p><a className="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                                    <h1>The best bet place on the Web!</h1>
+                                    <p>The excitement of winning thanks to your favorite team, at your favorite betting place.</p>
                                 </div>
                             </div>
                         </div>
@@ -103,33 +102,60 @@ class Init extends Component {
                 <div className="Steps container" >
                     <div className="row">
                         <div className="col-lg-4">
-                            <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
-                            <h2>Heading</h2>
-                            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-                            <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                            <img className="rounded-circle myRoundedImage" src="img/registration.svg" alt="First step, register image" width="140" height="140" />
+                            <h2 className="txtCentered">Register >></h2>
                         </div>
                         <div className="col-lg-4">
-                            <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
-                            <h2>Heading</h2>
-                            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-                            <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                            <img className="rounded-circle myRoundedImage" src="img/token.svg" alt="Second step, bet image" width="140" height="140" />
+                            <h2 className="txtCentered">Bet >></h2>
                         </div>
                         <div className="col-lg-4">
-                            <img className="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140" />
-                            <h2>Heading</h2>
-                            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-                            <p><a className="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                            <img className="rounded-circle myRoundedImage" src="img/winner.svg" alt="Last step, win image!" width="140" height="140" />
+                            <h2 className="txtCentered">Win!</h2>
                         </div>
-                    </div>
-
-                    <div className="row">
-                        <button className="btn btn-primary myLargeButton" onClick={() => this.Signup()}>Sign up now!</button>
                     </div>
                 </div>
 
-                <footer className="container">
+                <div id="AttributionsModal" className="modal" tabIndex="-1" role="dialog">
+                    <div className="modal-dialog" role="document">
+                        <div className="modal-content">
+
+                            <div className="modal-header">
+                                <h5 className="modal-title">Images and Icons information</h5>
+                            </div>
+
+                            <div className="modal-body">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col">
+                                            <h4>Images attributions: </h4>
+                                            <p className="noMargin">Bruce mars on <a href="https://unsplash.com">Unsplash</a></p>
+                                            <p className="noMargin">Comefreak on <a href="https://unsplash.com">Pixabay</a></p>
+                                            <p className="noMargin">Gratisography on <a href="www.pexels.com">Pexels</a></p>
+                                        </div>
+                                    </div>
+
+                                    <hr className="my-3" />
+
+                                    <div className="row">
+                                        <div className="col">
+                                            <h4>Icons attributions: </h4>
+                                            <p>Icons made by Freepick and dDara from <a href="https://www.flaticon.com">Flaticon</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer className="footer">
                     <p className="float-right"><a href="#">Back to top</a></p>
-                    <p>&copy; 2017-2018 Camilo A. Carrillo N., Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+                    <p className="noMargin">&copy; 2018 Camilo A. Carrillo N., Inc. &middot; <a href="" data-toggle="modal" data-target="#AttributionsModal">Images attributions</a></p>
                 </footer>
             </div>
         );

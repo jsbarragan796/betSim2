@@ -8,14 +8,13 @@ import { Factory } from "meteor/dburles:factory";
 
 import faker from "faker";
 
-import { Bets } from "./Bets.js";
+import { Bets } from "../Bets.js";
 
 if (Meteor.isServer) {
     describe('Bets', () => {
         describe('Bets.addBet', () => {
             let currentUserName = faker.internet.userName();
             let currentUser;
-
             
             let cEventId = faker.internet.userName();
             let cProb1 = faker.random.number();
@@ -46,7 +45,44 @@ if (Meteor.isServer) {
             });
 
             it('should add bet', () => {
+                
+                Meteor.call("Bets.addBet", cEventId, cProb1, cProb2, cProbT, cTeam1, cTeam2, cTie, cE1, cE2, cET);
+                
+                let newBet = Bets.findOne({_id: currentUser._id});
+                assert.isNotNull(newBet, "Bet added!");
+            });
+        });
+
+        describe('Bets.closeBet', () => {
+
+            let currentUserName = faker.internet.userName();
+            let currentUser;
+
+            
+            let cEventId = faker.internet.userName();
+            let cProb1 = faker.random.number();
+            let cProb2 = faker.random.number();
+            let cProbT = faker.random.number();
+            let cTeam1 = faker.random.number();
+            let cTeam2 = faker.random.number();
+            let cTie = faker.random.number();
+            let cE1 = faker.random.number();
+            let cE2 = faker.random.number();
+            let cET = faker.random.number();
+            let cSt = "OPEN";
+
+            beforeEach(function () {
+                resetDatabase();
+                Factory.define("user", Meteor.users, {
+                    username: currentUser
+                });
+
+                currentUser = Factory.create("user");
+                sinon.stub(Meteor, "user");
+                Meteor.user.returns(currentUser);
+
                 Bets.insert({
+                    _id: "id1",
                     userId: currentUser._id,
                     userName: currentUserName,
                     eventId: cEventId,
@@ -61,9 +97,21 @@ if (Meteor.isServer) {
                     ET: cET,
                     State: cSt
                 });
+            });
 
-                let newBet = Bets.findOne({_id: currentUser._id});
-                assert.isNotNull(newBet, "Bet added!");
+            afterEach(() => {
+                Meteor.user.restore();
+                resetDatabase();
+            });
+            
+            it('should close bet', () => {                
+                Meteor.call("Bets.closeBet", "id1");
+
+                let newBet = Bets.findOne({_id: "id1"});
+
+                if(newBet){
+                    assert.equal(newBet.State, "CLOSED", "Bet closed!");
+                }
             });
         });
     });

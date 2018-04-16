@@ -67,7 +67,7 @@ class Login extends Component {
                             </div>
                             <div className="form-group text-center">
                                 <p className="text-center">
-                                    Don't have an account? Register <a onClick={() => this.props.Signup()}>here</a>
+                                    Don't have an account? Register <a href="#" onClick={() => this.props.Signup()}>here</a>
                                 </p>
                             </div>
                         </form>

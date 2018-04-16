@@ -19,13 +19,46 @@ if (Meteor.isServer) {
                     fields: UserData.publicFields
                   });*/
     });
+
+    const addEventRule = {
+        type: 'method',
+        name: 'Events.addEvent'
+    };
+
+    const startEventRule = {
+        type: 'method',
+        name: 'Events.startEvent'
+    };
+
+    const endEventRule = {
+        type: 'method',
+        name: 'Events.endEvent'
+    };
+
+    const updateScoreRule = {
+        type: 'method',
+        name: 'Events.updateScore'
+    };
+
+    const addMatchEventRule = {
+        type: 'method',
+        name: 'Events.addMatchEvent'
+    };
+
+    const addBetRule = {
+        type: 'method',
+        name: 'Events.addBet'
+    };
+
+    DDPRateLimiter.addRule(addEventRule, 5, 1000);
+    DDPRateLimiter.addRule(startEventRule, 5, 1000);
+    DDPRateLimiter.addRule(endEventRule, 5, 1000);
+    DDPRateLimiter.addRule(updateScoreRule, 5, 1000);
+    DDPRateLimiter.addRule(addMatchEventRule, 5, 1000);
+    DDPRateLimiter.addRule(addBetRule, 5, 1000);
 }
 
 Meteor.methods({
-    "Events.getAll"() {
-        let res = Events.find({}).fetch();
-        console.log(res);
-    },
     "Events.addEvent"(category, name, place, date, image, team1, team2, prob1, prob2, tie) {
         let txtTest = "";
 
@@ -58,7 +91,7 @@ Meteor.methods({
             Team2R: 0,
             Bets1: 0,
             Bets2: 0,
-            BetsT:0,
+            BetsT: 0,
             Events: []
         };
 
@@ -111,9 +144,9 @@ Meteor.methods({
     },
     "Events.addBet"(eId, b1, b2, bT) {
 
-        let i1 = b1 > 0? 1 : 0;
-        let i2 = b2 > 0? 1 : 0;
-        let iT = bT > 0? 1 : 0;
+        let i1 = b1 > 0 ? 1 : 0;
+        let i2 = b2 > 0 ? 1 : 0;
+        let iT = bT > 0 ? 1 : 0;
 
         Events.update(
             { _id: eId },

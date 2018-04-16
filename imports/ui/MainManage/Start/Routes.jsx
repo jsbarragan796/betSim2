@@ -16,9 +16,6 @@ export const renderRoutes = () => (
       <Route exact={true} path="/" component={Init}/>
       
       <Route path="/App" component={App}/>
-
-      <Route path="/login" component={Login}/>
-      <Route path="/signup" component={Signup}/>
     </div>
   </Router>
 );

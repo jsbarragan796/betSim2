@@ -22,8 +22,5 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  "Categories.getAll"(){
-    let res = Categories.find({}).fetch();
-    console.log(res);
-  }
+  
 });

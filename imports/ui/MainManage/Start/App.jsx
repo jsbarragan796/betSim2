@@ -43,7 +43,7 @@ class App extends Component {
             if (err) {
                 console.log(err.reason);
             } else {
-                this.props.history.push('/login');
+                this.props.history.push('/');
             }
         });
     }

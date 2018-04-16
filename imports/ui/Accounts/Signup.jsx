@@ -71,7 +71,7 @@ class Signup extends Component {
                             </div>
                             <div className="form-group">
                                 <p className="text-center">
-                                    Already have an account? Login <a onClick={() => this.props.Login()}>here</a>
+                                    Already have an account? Login <a href="#" onClick={() => this.props.Login()}>here</a>
                                 </p>
                             </div>
                         </form>

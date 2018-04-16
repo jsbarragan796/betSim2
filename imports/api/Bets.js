@@ -32,7 +32,14 @@ if (Meteor.isServer) {
         type: 'method',
         name: 'Bets.addBet'
     };
+
+    const closeBetRule = {
+        type: 'method',
+        name: 'Bets.closeBet'
+    };
+
     DDPRateLimiter.addRule(addBetRule, 5, 1000);
+    DDPRateLimiter.addRule(closeBetRule, 5, 1000);
 }
 
 Meteor.methods({

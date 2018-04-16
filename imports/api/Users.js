@@ -18,6 +18,43 @@ if (Meteor.isServer) {
                 sort: { eventId: 1 }
             });
     });
+
+    const addCoinsRule = {
+        type: 'method',
+        name: 'User.addCoins'
+    };
+
+    const addCoinsToUserRule = {
+        type: 'method',
+        name: 'User.addCoinsToUser'
+    };
+
+    const removeBetCoinsRule = {
+        type: 'method',
+        name: 'User.removeBetCoins'
+    };
+
+    const removeNewBetCoinsRule = {
+        type: 'method',
+        name: 'User.removeNewBetCoins'
+    };
+
+    const addTeamBetRule = {
+        type: 'method',
+        name: 'User.addTeamBet'
+    };
+
+    const addWinTeamRule = {
+        type: 'method',
+        name: 'User.addWinTeam'
+    };
+
+    DDPRateLimiter.addRule(addCoinsRule, 5, 1000);
+    DDPRateLimiter.addRule(addCoinsToUserRule, 5, 1000);
+    DDPRateLimiter.addRule(removeBetCoinsRule, 5, 1000);
+    DDPRateLimiter.addRule(removeNewBetCoinsRule, 5, 1000);
+    DDPRateLimiter.addRule(addTeamBetRule, 5, 1000);
+    DDPRateLimiter.addRule(addWinTeamRule, 5, 1000);
 }
 
 Meteor.methods({
@@ -26,8 +63,9 @@ Meteor.methods({
 
         console.log("Adding coins : " + numCoins + " | " + nPrice);
 
+        //console.log(this.userId + " | " + Meteor.user()._id);
         Meteor.users.update(
-            { _id: this.userId },
+            { _id: Meteor.user()._id },
             {
                 $inc: {
                     "profile.coins": numCoins
@@ -36,7 +74,7 @@ Meteor.methods({
         );
 
         Meteor.users.update(
-            { _id: this.userId },
+            { _id: Meteor.user()._id },
             {
                 $push: {
                     "profile.purchases": {
@@ -71,7 +109,7 @@ Meteor.methods({
     },
     "User.removeNewBetCoins"(numCoins) {
         Meteor.users.update(
-            { _id: this.userId },
+            { _id: Meteor.user()._id },
             {
                 $inc: {
                     "profile.coins": -numCoins,
@@ -93,7 +131,7 @@ Meteor.methods({
             console.log("Exist: " + tName);
 
             Meteor.users.update(
-                { _id: this.userId, "profile.teams.name": tName },
+                { _id: Meteor.user()._id, "profile.teams.name": tName },
                 {
                     $inc: {
                         "profile.teams.$.bets": 1
@@ -101,8 +139,9 @@ Meteor.methods({
                 }
             );
         } else {
+            console.log("Not exist: " + tName);
             Meteor.users.update(
-                { _id: this.userId },
+                { _id: Meteor.user()._id },
                 {
                     $push: {
                         "profile.teams": {

@@ -119,7 +119,7 @@ class UserInfo extends Component {
         let actEvent = null;
         let lastEventW = null;
 
-        let result = <th scope="col" className="lose">Lose</th>;
+        let result = <th scope="col" className="lose">Unfinished</th>;
 
         if (bInfo) {
             bInfo.map((e) => (
@@ -149,6 +149,10 @@ class UserInfo extends Component {
                             } else {
                                 result = <th scope="col" className="lose">Lose</th>;
                             }
+                        }
+
+                        if(e.State == "OPEN"){
+                            result = <th scope="col" className="unfinished">Unfinished</th>;
                         }
                     }
                 }),
