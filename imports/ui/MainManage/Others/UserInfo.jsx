@@ -156,7 +156,7 @@ class UserInfo extends Component {
                         }
                     }
                 }),
-                //console.log(actEvent),
+                console.log(actEvent),
                 res.push(
                     <tr key={"Bet" + count}>
                         <th scope="row">{count}</th>
@@ -245,7 +245,7 @@ class UserInfo extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                {this.LoadBetsHistoric()}
+                                {this.props.events ? this.LoadBetsHistoric() : <h4>Loading events data...</h4>}
                             </tbody>
                         </table>
                     </div>
