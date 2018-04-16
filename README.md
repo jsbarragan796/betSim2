@@ -17,13 +17,13 @@ Features on added on V2:
 - User information
 
 To run the project:
-´´´
+```
 git clone https://github.com/CamiloC-Wk/betSim2.git
 meteor npm install
 meteor
-´´´
+```
 
 To run the test:
-´´´
+```
 meteor test --driver-package cultofcoders:mocha --port XXXX
-´´´
+```
