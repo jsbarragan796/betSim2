@@ -251,7 +251,7 @@ class MainPage extends Component {
                 <div className="container-fluid">
                     <div className="row">
 
-                        <nav className="col-md-2 bg-light sidebar">
+                        <nav id="SideBar" className="col-md-2 bg-light sidebar">
                             <div className="sidebar-sticky">
                                 <ul className="nav flex-column">
                                     {this.loadCategoriesList()}

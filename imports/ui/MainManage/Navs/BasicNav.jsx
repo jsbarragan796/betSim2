@@ -40,7 +40,7 @@ class BasicNav extends Component {
                         </ul>
 
                         <a className="navbar-brand" href="#UserInfoPage">
-                            <img src="img/user.svg" width="30" height="30" alt="" />
+                            <img src="img/user.svg" width="30" height="30" alt="User icon" />
                         </a>
                         <button onClick={this.props.logout} className="btn btn-outline-danger my-2 my-sm-0" type="submit">Log out</button>
                     </div>

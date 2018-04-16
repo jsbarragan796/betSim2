@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import ImageGallery from "../Others/ImageGallery.jsx";
-
 import "../../css/AddEventModal.css";
+
+import ImageGallery from "../Others/ImageGallery.jsx";
 
 class AddEventModal extends Component {
     constructor(props) {
