@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withTracker } from "meteor/react-meteor-data";
-
 import EventBetCard from "./EventBetCard.jsx";
 import { Events } from "../../../api/Events";
 import "../../css/MyBets.css";
 
-class MyBets extends Component {
+export default class MyBets extends Component {
 
     constructor(props){
         super(props);
@@ -15,15 +13,16 @@ class MyBets extends Component {
         this.loadBetsList = this.loadBetsList.bind(this);
     }
 
+   
+    componentDidMount() {
+        //console.log(this.props.myBets);
+    }
+    
     AddBet(eI, p1, p2, pT, b1, b2, bT, eR1, eR2, eRt, t1N, t2N){
         
         console.log(eI + " - " + p1 + " - " + p2 + " - " + pT + " - " + b1 + " - " + b2 + " - " + bT + " - " + eR1 + " - " + eR2 + " - " + eRt + " - " + t1N + " - " + t2N);
     
         this.props.AddBet(eI, p1, p2, pT, b1, b2, bT, eR1, eR2, eRt, t1N, t2N);
-    }
-
-    componentDidMount() {
-        //console.log(this.props.myBets);
     }
 
     loadBetsList() {
@@ -102,14 +101,3 @@ class MyBets extends Component {
 MyBets.propTypes = {
     myBets: PropTypes.array.isRequired
 }
-
-
-export default withTracker(
-    () => {
-        Meteor.subscribe("Events");
-
-        return {
-            events: Events.find({}).fetch()
-        }
-    }
-)(MyBets);
