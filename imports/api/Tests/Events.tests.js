@@ -110,7 +110,6 @@ if (Meteor.isServer) {
 
             it('should start event!', () => {
                 Meteor.call("Events.startEvent", eId);
-
                 let event = Events.findOne({ _id: eId });
                 assert.equal(event.State, "STARTED", "Event started!");
             });
