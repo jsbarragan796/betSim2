@@ -44,7 +44,7 @@ if (Meteor.isServer) {
 
 Meteor.methods({
     "Bets.addBet"(eI, p1, p2, pT, b1, b2, bT, e1, e2, eT) {
-
+        Check(eI,String);
         Bets.insert({
             userId: this.userId,
             userName: Meteor.user().username,
